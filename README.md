@@ -1,2 +1,2 @@
 # github-trending
-定时爬取GitHub上的流行项目
+爬取GitHub上的流行项目
