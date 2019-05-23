@@ -12,7 +12,6 @@ import codecs
 import os
 import time
 import datetime
-
 from pyquery import PyQuery as pq
 
 def git_add_commit_push(date, filename):
