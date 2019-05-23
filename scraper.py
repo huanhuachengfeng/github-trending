@@ -7,11 +7,12 @@ Spyder python3.7.1
 @author:  
 """
 
-import datetime
-import codecs
 import requests
+import codecs
 import os
 import time
+import datetime
+
 from pyquery import PyQuery as pq
 
 def git_add_commit_push(date, filename):
@@ -91,7 +92,7 @@ def job():
     time.sleep(2)
     scrape('go', filename)
     time.sleep(2)
-    scrape('Objective-C', filename)
+    scrape('objective-c', filename)
     time.sleep(2)
     scrape('swift', filename)
     time.sleep(2)
