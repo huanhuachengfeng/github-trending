@@ -46,9 +46,11 @@ def scrape(language, filename):
    
     items = d('ol.repo-list li')
 #     <ol class="repo-list">
-#    print(items)
+    
     # codecs to solve the problem utf-8 codec like chinese
     with codecs.open(filename, "a", "utf-8") as f:
+        if language == 'C%23':
+            language ='C#'
         f.write('\n#### {language}\n'.format(language=language))
 
         for item in items:
@@ -63,6 +65,7 @@ def scrape(language, filename):
             # print(ownerImg)
             f.write(u"* [{title}]({url}):{description}\n".format(title=title, url=url, description=description))
         f.flush()
+        print('save success')
 
 
 def job():
@@ -75,19 +78,28 @@ def job():
 
     # write markdown
     scrape('python', filename)
+    time.sleep(2)
     scrape('c', filename)
+    time.sleep(2)
     scrape('C++', filename)
+    time.sleep(2)
     scrape('dart', filename)
+    time.sleep(2)
     scrape('java', filename)
+    time.sleep(2)
     scrape('javascript', filename)
+    time.sleep(2)
     scrape('go', filename)
+    time.sleep(2)
     scrape('Objective-C', filename)
+    time.sleep(2)
     scrape('swift', filename)
-    scrape('C#', filename)
+    time.sleep(2)
+    scrape('C%23', filename)
     
 
 if __name__ == '__main__':
-    while True:
-        job()
-        #
-        time.sleep(12 * 60 * 60)
+    
+    job()
+    print('The script has finished running')
+      
