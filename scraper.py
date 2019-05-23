@@ -2,6 +2,8 @@
 """
 Created on Wed May 21 10:03:56 2019
 
+Spyder python3.7.1
+
 @author:  
 """
 
@@ -11,8 +13,6 @@ import requests
 import os
 import time
 from pyquery import PyQuery as pq
-#from wxpy import *
-
 
 def git_add_commit_push(date, filename):
     cmd_git_add = 'git add .'
@@ -41,7 +41,6 @@ def scrape(language, filename):
     assert r.status_code == 200
     print(url)
     
-    
     # print(r.encoding)
     d = pq(r.content)
    
@@ -66,7 +65,6 @@ def scrape(language, filename):
         f.flush()
 
 
-
 def job():
 
     strdate = datetime.datetime.now().strftime('%Y-%m-%d')
@@ -88,12 +86,8 @@ def job():
     scrape('C#', filename)
     
 
-
-
 if __name__ == '__main__':
     while True:
-
-
         job()
-        
+        #
         time.sleep(12 * 60 * 60)
